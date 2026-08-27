@@ -1,0 +1,13 @@
+class Solution(object):
+    def maxSubArray(self, nums):
+        currentsum=nums[0]
+        ans=nums[0]
+        for i in range(1,len(nums)):
+            if currentsum<0:
+                currentsum=0
+
+            currentsum+=nums[i]
+            if(currentsum>ans):
+                ans=currentsum
+        return ans                   
+        
