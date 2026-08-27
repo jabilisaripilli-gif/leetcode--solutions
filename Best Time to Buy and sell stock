@@ -1,0 +1,13 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        ans=0
+        MinValueSoFar=prices[0]
+        for i in range(1,len(prices)):
+            profit=prices[i]-MinValueSoFar
+            if profit > ans:
+                ans=profit
+            if prices[i]<MinValueSoFar:
+                MinValueSoFar=prices[i]
+        return ans        
+
+        
