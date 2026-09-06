@@ -1,0 +1,13 @@
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        nums=set(nums)
+        if len(nums)<3:
+            return max(nums)
+        count=0
+        while(count<2):
+            x=max(nums)
+            nums.remove(x)
+            count+=1
+        return max(nums)    
+
+        
