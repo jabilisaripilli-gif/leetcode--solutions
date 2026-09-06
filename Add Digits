@@ -1,0 +1,9 @@
+class Solution:
+    def addDigits(self, num: int) -> int:
+        x=list(str(num))
+        while(len(x)!=1):
+            sum=0
+            for i in range(len(x)):
+                sum+=int(x[i])
+            x=list(str(sum))
+        return int(x[0])
