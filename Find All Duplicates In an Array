@@ -1,0 +1,14 @@
+class Solution:
+    def findDuplicates(self, nums: list[int]) -> list[int]:
+        l=[]
+        freq={}
+        for i in nums:
+            if i in freq:
+                freq[i]+=1
+            else:
+                freq[i]=1
+        for i in range(len(nums)):
+            if freq[nums[i]]>=2 and nums[i] not in l :
+                l.append(nums[i])
+        return (l)                    
+        
