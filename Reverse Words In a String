@@ -1,0 +1,8 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        x=s.split()
+        y=x[::-1]
+        return ' '.join(y)
+
+
+        
