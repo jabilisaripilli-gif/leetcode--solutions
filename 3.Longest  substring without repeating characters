@@ -1,0 +1,46 @@
+class Solution:
+    def add(self,ht,ch):
+        if ch in ht:
+            ht[ch]+=1
+        else:
+            ht[ch]=1
+    def remove(self,ht,ch):
+        ht[ch]-=1
+    def isValid(self,ht):
+        for ch in ht:
+            if ht[ch]>1:
+                return False
+        return True
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        n=len(s)
+        sp=0
+        fp=0
+        ht={}
+        ans=0
+        while(sp<n):
+            self.add(ht,s[sp])
+            while(fp<sp and not self.isValid(ht)):
+                self.remove(ht,s[fp])
+                fp+=1
+            leg=sp-fp+1
+            ans=max(ans,leg)
+            sp+=1
+        return ans
+
+                                    
+
+
+
+
+
+
+               
+
+
+
+
+
+
+
+
+        
